@@ -5,7 +5,7 @@ This is a wordpress shortchord for the javascript library chordography2 (https:/
 This is a wordpress plugin. So you need to have a self hosted wordpress to be able to use it. Also the chordography2 uses the latest version of javascript language style so your browser should support variable declaration such as let and so one. 
 
 ### Installation
-Just download the folder and either add it via the plugin manager in web interface or upload it via Ftp. The activate
+Just download the folder and either add it via the plugin manager in web interface or upload it via Ftp. 
 
 ### Usage
 The usage and sample example can be found via the following link.
