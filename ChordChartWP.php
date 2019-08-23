@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: ChordChartWP
-* Plugin URI: coming sson
+* Plugin URI: coming soon on wordpress.org
 * Description: A shortcode generator for the javascript based chord chart chordography2. Can be used for Ukulele, Banjo and any fretted string instrument.
 * Version: 1.0
-* Author: Faniry Razafindrazaka
-* Author URI: coming soon
+* Author: Faniry H. Razafindrazaka
+* Author URI: https://github.com/faniry6/chordchartWP
 **/
 function wpFindChord($chord) {
 	// Define list of known chords
@@ -49,9 +49,7 @@ function wpScriptInitialize(){
 add_action('wp_enqueue_scripts','wpScriptInitialize');
 
 function wpChordChart($atts) {
-	//wp_enqueue_script(chart);
 	wpScriptInitialize();
-	echo 'Launching the plugin';
 	$attribute = shortcode_atts ( array (
 			'title' => '',
 			'frets' => '',
