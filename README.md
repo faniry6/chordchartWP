@@ -1,5 +1,5 @@
 # ChordChartWP
-This is a wordpress shortchord for the javascript library chordography2 (https://chordography2.blogspot.com/). It is easy to use, plug and go, and can be intensively costumized with several parameters. 
+This is a wordpress shortcode for the javascript library chordography2 (https://chordography2.blogspot.com/). It is easy to use, plug and go, and can be intensively costumized with several parameters. 
 
 ### Prerequisites
 This is a wordpress plugin. So you need to have a self hosted wordpress to be able to use it. Also the chordography2 uses the latest version of javascript language style so your browser should support variable declaration such as let and so one. 
