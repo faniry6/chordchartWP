@@ -1,4 +1,4 @@
-# chordchartWP
+# ChordChartWP
 This is a wordpress shortchord for the javascript library chordography2 (https://chordography2.blogspot.com/). It is easy to use, plug and go, and can be intensively costumized with several parameters. 
 
 ### Prerequisites
