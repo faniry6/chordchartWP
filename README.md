@@ -18,7 +18,7 @@ For more chords from the database
 ```
 For custom chords
 ```
-[chordchart tile="Am7,DM7" frets="x02010,x57675" labels="xx2x1x,x13241"]
+[chordchart title="Am7,DM7" frets="x02010,x57675" labels="xx2x1x,x13241"]
 ```
 For mixed of chords from database and custom chords
 ```
