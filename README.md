@@ -30,6 +30,9 @@ For chord in higher position of the neck you could use parantheses to define the
 ```
 You could also ignore the label parameter but then the barre sign will not be rendered for E-shape and A-shape chords.
 
+You can see the renderings at the following page
+https://www.gasytablature.com/chordchartwp/
+
 To change the style, you could use parameter such as style="pretty" or cellHeight=34, etc.,. in the short code. The other parameter can be found in the chart.data.js file
 
 ### TODOs and Contribute
