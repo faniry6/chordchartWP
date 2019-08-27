@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: ChordChartWP
-* Plugin URI: coming soon on wordpress.org
+* Plugin URI: https://www.gasytablature.com/chordchartwp/
 * Description: A shortcode generator for the javascript based chord chart chordography2. Can be used for Ukulele, Banjo and any fretted string instrument.
 * Version: 1.0
 * Author: Faniry H. Razafindrazaka
 * Author URI: https://github.com/faniry6/chordchartWP
 **/
-function wpFindChord($chord) {
+function chordchart_find_chord($chord) {
 	// Define list of known chords
 	$basic_chord = array (
 			"A" => array (
@@ -41,15 +41,15 @@ function wpFindChord($chord) {
 	);
 	return $basic_chord [$chord];
 }
-function wpScriptInitialize(){
+function chordchart_script_initialize(){
 	wp_register_script('chart-data', plugin_dir_url(__FILE__).'js/chart.data.js');
 	wp_enqueue_script('chart',plugin_dir_url(__FILE__).'js/chart.js',array('chart-data'));
 }
 
-add_action('wp_enqueue_scripts','wpScriptInitialize');
+add_action('wp_enqueue_scripts','chordchart_script_initialize');
 
-function wpChordChart($atts) {
-	wpScriptInitialize();
+function chordchart_image_generator($atts) {
+	chordchart_script_initialize();
 	$attribute = shortcode_atts ( array (
 			'title' => '',
 			'frets' => '',
@@ -90,7 +90,7 @@ function wpChordChart($atts) {
 		$known_chord = false;
 		$numChord = count ( $title_array );
 		for($i = 0; $i < $numChord; $i ++) {
-			$chord_info = wpFindChord ( $title_array [$i] );
+			$chord_info = chordchart_find_chord ( $title_array [$i] );
 			if (strlen((string)$chord_info[1]) !== 0) {
 				$frets_array [$i] = $chord_info [0];
 				$labels_array [$i] = $chord_info [1];
@@ -182,7 +182,7 @@ function wpChordChart($atts) {
 			$frets_comma_split = substr ( $frets_comma_split, 0, - 1 );
 		} else {
 			if(strlen($frets_array [$i])===0){
-				$chord_info = wpFindChord ( $title_array [$i] );
+				$chord_info = chordchart_find_chord ( $title_array [$i] );
 				$frets_array[$i] = $chord_info[0];
 				$labels_array [$i] = $chord_info [1];
 			}
@@ -208,6 +208,6 @@ function wpChordChart($atts) {
 	}
 	$html .= '</script>';
 	// Put it exactly where it should be
-	echo $html; 
+	return $html;
 }
-add_shortcode ( 'chordChart', 'wpChordChart' );
+add_shortcode ( 'chordChart', 'chordchart_image_generator' );
